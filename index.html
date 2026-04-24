@@ -226,24 +226,57 @@
   <!-- Widget Showcase -->
   <section class="py-20 bg-gray-50" x-cloak>
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="text-center mb-12">
+        <span class="inline-block bg-emerald-dark text-gold text-sm font-semibold px-3 py-1 rounded-full mb-4" x-text="t('widgets.subtitle')"></span>
+        <h2 class="text-3xl font-bold mb-4 text-emerald-dark" x-text="t('widgets.title')"></h2>
+        <p class="text-gray-600 max-w-2xl mx-auto" x-text="t('widgets.desc')"></p>
+      </div>
+
+      <!-- Gallery (all widgets on desktop) -->
+      <div class="mb-16">
+        <div class="screenshot-card">
+          <img src="Screenshots/widget_gallery.png" alt="Widget Gallery" class="w-full rounded-xl shadow-2xl">
+        </div>
+      </div>
+
+      <!-- Individual sizes -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Small + Medium -->
         <div>
-          <span class="inline-block bg-emerald-dark text-gold text-sm font-semibold px-3 py-1 rounded-full mb-4" x-text="t('widgets.subtitle')"></span>
-          <h2 class="text-3xl font-bold mb-4 text-emerald-dark" x-text="t('widgets.title')"></h2>
-          <p class="text-gray-600 mb-8" x-text="t('widgets.desc')"></p>
-          <ul class="space-y-3">
-            <template x-for="(item, i) in t('widgets.features')" :key="i">
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                <span class="text-gray-700 text-sm" x-text="item"></span>
-              </li>
-            </template>
-          </ul>
+          <h3 class="text-lg font-semibold text-emerald-dark mb-4">Small & Medium</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="screenshot-card">
+              <img src="Screenshots/widget_small.png" alt="Small Widget" class="w-full rounded-xl shadow-lg">
+            </div>
+            <div class="screenshot-card">
+              <img src="Screenshots/widget_medium.png" alt="Medium Widget" class="w-full rounded-xl shadow-lg">
+            </div>
+          </div>
         </div>
-        <div class="relative">
-          <img src="Screenshots/mock_widget.png" alt="macOS Widget" class="rounded-xl shadow-2xl">
-          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gold rounded-full opacity-20 blur-xl"></div>
+        <!-- Large + Lock Screen -->
+        <div>
+          <h3 class="text-lg font-semibold text-emerald-dark mb-4">Large & Lock Screen</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="screenshot-card">
+              <img src="Screenshots/widget_large.png" alt="Large Widget" class="w-full rounded-xl shadow-lg">
+            </div>
+            <div class="screenshot-card">
+              <img src="Screenshots/widget_lockscreen.png" alt="Lock Screen Widget" class="w-full rounded-xl shadow-lg">
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Feature checklist -->
+      <div class="mt-12 max-w-2xl mx-auto">
+        <ul class="space-y-3">
+          <template x-for="(item, i) in t('widgets.features')" :key="i">
+            <li class="flex items-start gap-3 check-item">
+              <svg class="w-5 h-5 text-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span class="text-gray-700 text-sm" x-text="item"></span>
+            </li>
+          </template>
+        </ul>
       </div>
     </div>
   </section>
