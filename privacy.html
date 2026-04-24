@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" x-data="app()" :dir="lang().dir">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title x-text="t('site.name') + ' - ' + t('privacy.title')">Privacy Policy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="translations.js"></script>
+  <style>
+    [x-cloak] { display: none !important; }
+    .bg-emerald-dark { background-color: #104937; }
+    .text-emerald-dark { color: #104937; }
+    .text-gold { color: #F2C94C; }
+    .prose h2 { color: #104937; margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.25rem; font-weight: 600; }
+    .prose p { color: #374151; margin-bottom: 1rem; line-height: 1.7; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-emerald-dark text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="AppIcon_512.png" alt="Salah Lite" class="w-8 h-8 rounded-lg">
+        <span class="font-bold text-lg" x-text="t('site.name')">Salah Lite</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <select x-model="$store.lang.current" @change="changeLang($event.target.value)"
+                class="bg-emerald-800 border border-emerald-600 rounded px-2 py-1 text-sm text-white">
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+          <option value="ar">العربية</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="pt-28 pb-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="prose">
+      <h1 class="text-3xl font-bold text-emerald-dark mb-6" x-text="t('privacy.title')"></h1>
+      <p x-text="t('privacy.intro')"></p>
+
+      <h2 x-text="t('privacy.data')"></h2>
+      <p x-text="t('privacy.dataDesc')"></p>
+
+      <h2 x-text="t('privacy.location')"></h2>
+      <p x-text="t('privacy.locationDesc')"></p>
+
+      <h2 x-text="t('privacy.updates')"></h2>
+      <p x-text="t('privacy.updatesDesc')"></p>
+
+      <h2 x-text="t('privacy.contact')"></h2>
+      <p x-text="t('privacy.contactDesc')"></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-emerald-dark text-emerald-200 py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="mb-4" x-text="t('footer.rights')"></p>
+      <a href="index.html" class="text-gold hover:underline" x-text="t('site.getStarted')"></a>
+    </div>
+  </footer>
+
+  <script>
+    function app() {
+      return {
+        t(key) {
+          const current = this.$store.lang.current;
+          const keys = key.split('.');
+          let val = translations[current];
+          for (const k of keys) val = val?.[k];
+          return val || key;
+        },
+        lang() { return translations[this.$store.lang.current] || translations.en; },
+        changeLang(code) {
+          this.$store.lang.current = code;
+          localStorage.setItem('salah-lite-lang', code);
+          document.documentElement.lang = code;
+          document.documentElement.dir = this.lang().dir;
+        }
+      }
+    }
+
+    document.addEventListener('alpine:init', () => {
+      const params = new URLSearchParams(window.location.search);
+      const urlLang = params.get('lang');
+      const savedLang = localStorage.getItem('salah-lite-lang');
+      const browserLang = navigator.language.split('-')[0];
+      let initial = 'en';
+      if (urlLang && translations[urlLang]) initial = urlLang;
+      else if (savedLang && translations[savedLang]) initial = savedLang;
+      else if (['en', 'zh', 'ar'].includes(browserLang)) initial = browserLang;
+      Alpine.store('lang', { current: initial });
+      document.documentElement.dir = translations[initial].dir;
+    });
+  </script>
+</body>
+</html>
