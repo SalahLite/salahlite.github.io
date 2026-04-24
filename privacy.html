@@ -22,7 +22,7 @@
   <nav class="fixed top-0 left-0 right-0 z-50 bg-emerald-dark text-white">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <img src="AppIcon_512.png" alt="Salah Lite" class="w-8 h-8 rounded-lg">
+        <img src="AppIcon_512.png" :alt="t('site.name')" class="w-8 h-8 rounded-lg">
         <span class="font-bold text-lg" x-text="t('site.name')">Salah Lite</span>
       </a>
       <div class="flex items-center gap-4">
@@ -52,7 +52,11 @@
       <p x-text="t('privacy.updatesDesc')"></p>
 
       <h2 x-text="t('privacy.contact')"></h2>
-      <p x-text="t('privacy.contactDesc')"></p>
+      <p>
+        <span x-text="t('privacy.contactDesc').split('salahlite@gmail.com')[0]"></span>
+        <a href="mailto:salahlite@gmail.com" class="text-gold hover:underline font-medium">salahlite@gmail.com</a>
+        <span x-show="t('privacy.contactDesc').includes('。')" x-text="'。'"></span>
+      </p>
     </div>
   </main>
 
