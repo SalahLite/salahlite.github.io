@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" x-data="app()" :dir="lang().dir">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title x-text="t('site.name') + ' - ' + t('site.slogan')">Salah Lite</title>
+  <meta name="description" content="A minimalist, privacy-first, offline prayer app for macOS menu bar.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="translations.js"></script>
+  <style>
+    [x-cloak] { display: none !important; }
+    .bg-emerald-dark { background-color: #104937; }
+    .text-emerald-dark { color: #104937; }
+    .bg-gold { background-color: #F2C94C; }
+    .text-gold { color: #F2C94C; }
+    .border-gold { border-color: #F2C94C; }
+    .btn-gold {
+      background-color: #F2C94C;
+      color: #104937;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s;
+    }
+    .btn-gold:hover { background-color: #d4a832; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-emerald-dark text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="AppIcon_512.png" alt="Salah Lite" class="w-8 h-8 rounded-lg">
+        <span class="font-bold text-lg" x-text="t('site.name')">Salah Lite</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <select x-model="$store.lang.current" @change="changeLang($event.target.value)"
+                class="bg-emerald-800 border border-emerald-600 rounded px-2 py-1 text-sm text-white">
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+          <option value="ar">العربية</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="pt-32 pb-20 bg-emerald-dark text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <img src="AppIcon_512.png" alt="Salah Lite Icon" class="w-24 h-24 mx-auto rounded-2xl mb-6 shadow-lg">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4" x-text="t('site.slogan')"></h1>
+      <p class="text-lg sm:text-xl text-emerald-100 max-w-2xl mx-auto mb-8" x-text="t('site.tagline')"></p>
+      <a href="https://apps.apple.com" target="_blank" class="btn-gold inline-block">
+        <span x-text="t('site.getStarted')"></span> →
+      </a>
+    </div>
+  </header>
+
+  <!-- Features -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <template x-for="(feature, index) in t('features')" :key="index">
+          <div class="p-6 border border-gray-200 rounded-xl hover:border-gold transition">
+            <div class="w-12 h-12 bg-emerald-dark rounded-lg mb-4 flex items-center justify-center">
+              <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-emerald-dark" x-text="feature.title"></h3>
+            <p class="text-gray-600" x-text="feature.desc"></p>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-4 text-emerald-dark" x-text="t('screenshots.title')"></h2>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-12" x-text="t('screenshots.desc')"></p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <img src="Screenshots/mock_popover.png" alt="Popover View" class="rounded-xl shadow-lg hover:shadow-xl transition">
+        <img src="Screenshots/mock_settings.png" alt="Settings View" class="rounded-xl shadow-lg hover:shadow-xl transition">
+        <img src="Screenshots/mock_widget.png" alt="Widget View" class="rounded-xl shadow-lg hover:shadow-xl transition">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-emerald-dark text-emerald-200 py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="mb-4" x-text="t('footer.rights')"></p>
+      <a href="privacy.html" class="text-gold hover:underline" x-text="t('footer.privacy')"></a>
+    </div>
+  </footer>
+
+  <script>
+    function app() {
+      return {
+        t(key) {
+          const current = this.$store.lang.current;
+          const keys = key.split('.');
+          let val = translations[current];
+          for (const k of keys) val = val?.[k];
+          return val || key;
+        },
+        lang() { return translations[this.$store.lang.current] || translations.en; },
+        changeLang(code) {
+          this.$store.lang.current = code;
+          localStorage.setItem('salah-lite-lang', code);
+          document.documentElement.lang = code;
+          document.documentElement.dir = this.lang().dir;
+        }
+      }
+    }
+
+    document.addEventListener('alpine:init', () => {
+      Alpine.store('lang', {
+        current: 'en'
+      });
+
+      // Detect language: URL param > localStorage > navigator.language > EN
+      const params = new URLSearchParams(window.location.search);
+      const urlLang = params.get('lang');
+      const savedLang = localStorage.getItem('salah-lite-lang');
+      const browserLang = navigator.language.split('-')[0];
+      
+      let initial = 'en';
+      if (urlLang && translations[urlLang]) initial = urlLang;
+      else if (savedLang && translations[savedLang]) initial = savedLang;
+      else if (['en', 'zh', 'ar'].includes(browserLang)) initial = browserLang;
+      
+      Alpine.store('lang', { current: initial });
+      document.documentElement.dir = translations[initial].dir;
+    });
+  </script>
+</body>
+</html>
