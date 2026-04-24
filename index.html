@@ -224,7 +224,7 @@
   </section>
 
   <!-- Widget Showcase -->
-  <section class="py-20 bg-gray-50">
+  <section class="py-20 bg-gray-50" x-cloak>
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
@@ -249,7 +249,7 @@
   </section>
 
   <!-- Multi-Language Showcase -->
-  <section class="py-20 bg-white">
+  <section class="py-20 bg-white" x-cloak>
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold mb-4 text-emerald-dark" x-text="t('languages.title')"></h2>
@@ -268,7 +268,7 @@
   </section>
 
   <!-- Screenshots -->
-  <section class="py-20 bg-gray-50">
+  <section class="py-20 bg-gray-50" x-cloak>
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl font-bold mb-4 text-emerald-dark" x-text="t('screenshots.title')"></h2>
       <p class="text-gray-600 max-w-2xl mx-auto mb-12" x-text="t('screenshots.desc')"></p>
@@ -313,12 +313,16 @@
     function app() {
       return {
         t(key) {
-          const current = this.$store.lang.current;
+          const store = this.$store && this.$store.lang;
+          const current = store ? store.current : 'en';
+          const val = this._resolve(current, key);
+          return val || this._resolve('en', key) || key;
+        },
+        _resolve(lang, key) {
           const keys = key.split('.');
-          let val = translations[current];
+          let val = translations[lang];
           for (const k of keys) {
-            if (val === undefined) break;
-            // Handle array indexing like 'features[2].title'
+            if (val === undefined) return undefined;
             const match = k.match(/^(\w+)\[(\d+)\]$/);
             if (match) {
               val = val?.[match[1]]?.[parseInt(match[2])];
@@ -326,9 +330,13 @@
               val = val?.[k];
             }
           }
-          return val || key;
+          return val;
         },
-        lang() { return translations[this.$store.lang.current] || translations.en; },
+        lang() {
+          const store = this.$store && this.$store.lang;
+          const current = store ? store.current : 'en';
+          return translations[current] || translations.en;
+        },
         changeLang(code) {
           this.$store.lang.current = code;
           localStorage.setItem('salah-lite-lang', code);
