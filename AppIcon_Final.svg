@@ -34,7 +34,7 @@
       <rect x="220" y="612" width="584" height="16" rx="8"/>
 
       <!-- Main Dome -->
-      <path d="M 290 620 C 290 410, 734 410, 734 620 Z M 380 610 L 380 530 C 380 480, 644 480, 644 530 L 644 610 Z" fill="#F2C94C" fill-rule="evenodd"/>
+      <path d="M 290 620 C 290 410, 734 410, 734 620 Z M 468 610 L 468 570 C 468 550, 556 550, 556 570 L 556 610 Z" fill="#F2C94C" fill-rule="evenodd"/>
 
       <!-- Dome Spire -->
       <rect x="506" y="320" width="12" height="80" rx="6"/>
