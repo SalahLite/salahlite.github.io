@@ -33,7 +33,7 @@ const translations = {
       {
         icon: "widget",
         title: "macOS Widgets",
-        desc: "Place prayer times right on your desktop or Lock Screen with native macOS widgets.",
+        desc: "Place prayer times right on your desktop with native macOS widgets.",
         detail: "Multiple sizes, real-time updates, no app launch needed."
       },
       {
@@ -52,11 +52,10 @@ const translations = {
     widgets: {
       title: "Always Visible, Never in the Way",
       subtitle: "Native macOS widgets keep prayer times one glance away.",
-      desc: "Pin prayer times to your desktop, Notification Center, or Lock Screen. Choose from multiple widget sizes — all update in real-time without opening the app.",
+      desc: "Pin prayer times to your desktop or Notification Center. Choose from multiple widget sizes — all update in real-time without opening the app.",
       features: [
         "Desktop widget — see today's full schedule at a glance",
-        "Lock Screen widget — check times without unlocking",
-        "Small & medium sizes — fits any layout",
+        "MenuBar — always accessible from the top right corner",
         "Live countdown to next prayer"
       ]
     },
@@ -130,7 +129,7 @@ const translations = {
       {
         icon: "widget",
         title: "macOS 小组件",
-        desc: "通过原生 macOS 小组件，将祈祷时间直接放在桌面或锁屏界面上。",
+        desc: "通过原生 macOS 小组件，将祈祷时间直接放在桌面上。",
         detail: "多种尺寸，实时更新，无需打开应用。"
       },
       {
@@ -149,11 +148,10 @@ const translations = {
     widgets: {
       title: "始终可见，从不打扰",
       subtitle: "原生 macOS 小组件，祈祷时间一目了然。",
-      desc: "将祈祷时间固定在桌面、通知中心或锁屏界面。提供多种小组件尺寸 — 全部实时更新，无需打开应用。",
+      desc: "将祈祷时间固定在桌面或通知中心。提供多种小组件尺寸 — 全部实时更新，无需打开应用。",
       features: [
         "桌面小组件 — 一眼查看全天祈祷时间表",
-        "锁屏小组件 — 不解锁也能快速查看",
-        "小号和中型尺寸 — 适配任何布局",
+        "菜单栏 — 右上角随时访问",
         "距离下次祈祷实时倒计时"
       ]
     },
