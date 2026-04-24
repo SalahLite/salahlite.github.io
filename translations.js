@@ -7,6 +7,8 @@ const translations = {
       slogan: "Simple. Private. Offline.",
       tagline: "A minimalist prayer companion for your Mac menu bar — accurate, private, and always available.",
       getStarted: "Get on the App Store — $1.99",
+      ctaDesc: "No accounts. No permissions. No internet. Just your prayer times.",
+      ctaTitle: "Start Praying with Peace of Mind",
       language: "Language"
     },
     features: [
@@ -102,6 +104,8 @@ const translations = {
       slogan: "简单。隐私。离线。",
       tagline: "Mac 菜单栏中的极简祈祷伴侣 — 精准、私密、随时可用。",
       getStarted: "前往 App Store 购买 — $1.99",
+      ctaDesc: "无需注册账号，无需额外权限，无需联网 — 只有你的祈祷时间。",
+      ctaTitle: "安心礼拜，从这里开始",
       language: "语言"
     },
     features: [
@@ -197,6 +201,8 @@ const translations = {
       slogan: "بسيط. خاص. بدون إنترنت.",
       tagline: "رفيق الصلاة البسيط لشريط قائمة جهاز ماك — دقيق، خاص، ومتاح دائماً.",
       getStarted: "احصل عليه من App Store — $1.99",
+      ctaDesc: "بلا حسابات. بلا صلاحيات. بلا إنترنت. مجرد أوقات صلاتك فقط.",
+      ctaTitle: "ابدأ صلاتك وقلبك مطمئن",
       language: "اللغة"
     },
     features: [
