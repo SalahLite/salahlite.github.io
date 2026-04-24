@@ -3,8 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title x-text="t('site.name') + ' - ' + t('site.slogan')">Salah Lite</title>
-  <meta name="description" content="A minimalist, privacy-first, offline prayer app for macOS menu bar.">
+  <title x-text="t('site.name') + ' - ' + t('site.slogan')">Salah Lite - Simple. Private. Offline.</title>
+  <meta name="description" content="A minimalist, privacy-first, offline prayer app for macOS menu bar. Precise prayer times, widgets, 8+ languages with RTL support. No tracking, no accounts.">
+  <meta name="keywords" content="muslim,adhan,qibla,macos,widget,礼拜,轻礼拜,مسلم,أذان,إسلام,مواقيت,أوقات,مسجد,رمضان,قرآن,القبلة,prayer times,islam,mac app,salah,macos widget">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Salah Lite">
+  <link rel="canonical" href="https://salahlite.github.io/">
+  <!-- Multi-language alternates -->
+  <link rel="alternate" hreflang="en" href="https://salahlite.github.io/?lang=en">
+  <link rel="alternate" hreflang="zh" href="https://salahlite.github.io/?lang=zh">
+  <link rel="alternate" hreflang="ar" href="https://salahlite.github.io/?lang=ar">
+  <link rel="alternate" hreflang="x-default" href="https://salahlite.github.io/">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://salahlite.github.io/">
+  <meta property="og:title" content="Salah Lite — Simple. Private. Offline.">
+  <meta property="og:description" content="A minimalist, privacy-first, offline prayer app for macOS. Precise prayer times, widgets, 8+ languages.">
+  <meta property="og:image" content="https://salahlite.github.io/AppIcon_512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="ar_SA">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Salah Lite — Simple. Private. Offline.">
+  <meta name="twitter:description" content="A minimalist, privacy-first, offline prayer app for macOS.">
+  <meta name="twitter:image" content="https://salahlite.github.io/AppIcon_512.png">
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Salah Lite",
+    "alternateName": ["Salatak", "轻礼拜", "صلاتك"],
+    "description": "A minimalist, privacy-first, offline prayer time companion for macOS with precise calculations, widgets, and multi-language support.",
+    "url": "https://salahlite.github.io/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "macOS 13.0+",
+    "softwareVersion": "1.0.0",
+    "applicationSuite": "macOS",
+    "offers": {
+      "@type": "Offer",
+      "price": "1.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/PreOrder",
+      "category": "Mac App Store"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Salah Lite",
+      "email": "salahlite@gmail.com"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "ratingCount": "1"
+    },
+    "screenshot": [
+      "https://salahlite.github.io/Screenshots/widget_gallery.png",
+      "https://salahlite.github.io/Screenshots/mock_popover.png"
+    ],
+    "inLanguage": ["en", "zh", "ar", "id", "tr", "fr", "de", "ms", "ur", "bn", "fa", "hi"]
+  }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="translations.js"></script>
