@@ -34,7 +34,7 @@
       <rect x="220" y="612" width="584" height="16" rx="8"/>
 
       <!-- Main Dome -->
-      <path d="M 290 620 C 290 410, 734 410, 734 620 Z"/>
+      <path d="M 290 620 C 290 410, 734 410, 734 620 Z M 380 610 L 380 530 C 380 480, 644 480, 644 530 L 644 610 Z" fill="#F2C94C" fill-rule="evenodd"/>
 
       <!-- Dome Spire -->
       <rect x="506" y="320" width="12" height="80" rx="6"/>
@@ -57,8 +57,6 @@
 
     </g>
 
-      <!-- Mihrab (Inner Dashed Arch) -->
-      <path d="M 450 620 C 450 520, 574 520, 574 620" fill="none" stroke="#F2C94C" stroke-width="5" stroke-dasharray="10,8" stroke-linecap="round" opacity="0.85"/>
 
       <!-- Praying Figures (Simple Line Art) -->
     <g fill="#F2C94C" stroke="#F2C94C" stroke-linecap="round" stroke-linejoin="round">
