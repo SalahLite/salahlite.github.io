@@ -33,8 +33,10 @@
       <!-- Base Line -->
       <rect x="220" y="612" width="584" height="16" rx="8"/>
 
-      <!-- Main Dome -->
-      <path d="M 290 620 C 290 410, 734 410, 734 620 Z M 468 610 L 468 570 C 468 550, 556 550, 556 570 L 556 610 Z" fill="#F2C94C" fill-rule="evenodd"/>
+      <!-- Main Dome (Solid) -->
+      <path d="M 290 620 C 290 410, 734 410, 734 620 Z" fill="#F2C94C"/>
+      <!-- Inner Mihrab Cutout (Cover with background color to simulate cutout) -->
+      <path d="M 468 610 L 468 570 C 468 550, 556 550, 556 570 L 556 610 Z" fill="#0A2E23"/>
 
       <!-- Dome Spire -->
       <rect x="506" y="320" width="12" height="80" rx="6"/>
