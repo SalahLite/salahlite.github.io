@@ -28,7 +28,7 @@ const translations = {
         icon: "menu",
         title: "Menu Bar Native",
         desc: "Lives quietly in your menu bar. One click to see next prayer, countdown, and Qibla direction.",
-        detail: "Lightweight — under 5 MB. Never interrupts your workflow."
+        detail: "Lightweight — under 8 MB. Never interrupts your workflow."
       },
       {
         icon: "widget",
@@ -125,7 +125,7 @@ const translations = {
         icon: "menu",
         title: "菜单栏原生",
         desc: "安静地驻留在菜单栏。一键查看下一次祈祷倒计时和朝向。",
-        detail: "极轻量 — 不足 5 MB。从不会打断你的工作。"
+        detail: "极轻量 — 不足 8 MB。从不会打断你的工作。"
       },
       {
         icon: "widget",
@@ -222,7 +222,7 @@ const translations = {
         icon: "menu",
         title: "شريط القائمة الأصلي",
         desc: "يعيش بهدوء في شريط القائمة. بنقرة واحدة لمعرفة الوقت المتبقي للصلاة التالية واتجاه القبلة.",
-        detail: "خفيف للغاية — أقل من 5 ميغابايت. لا يقطع عملك أبداً."
+        detail: "خفيف للغاية — أقل من 8 ميغابايت. لا يقطع عملك أبداً."
       },
       {
         icon: "widget",
