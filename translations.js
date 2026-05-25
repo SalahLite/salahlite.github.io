@@ -93,6 +93,7 @@ const translations = {
     footer: {
       rights: "© 2025 Salah Lite. All rights reserved.",
       privacy: "Privacy Policy",
+      contact: "Contact Us",
       made: "Built with ❤️ for the global Muslim community"
     }
   },
@@ -189,6 +190,7 @@ const translations = {
     footer: {
       rights: "© 2025 Salah Lite。保留所有权利。",
       privacy: "隐私政策",
+      contact: "联系我们",
       made: "为全球穆斯林社群 ❤️ 打造"
     }
   },
@@ -286,6 +288,7 @@ const translations = {
     footer: {
       rights: "© 2025 صلاتك لايت. جميع الحقوق محفوظة.",
       privacy: "سياسة الخصوصية",
+      contact: "اتصل بنا",
       made: "بُني بـ ❤️ للمجتمع المسلم العالمي"
     }
   }
