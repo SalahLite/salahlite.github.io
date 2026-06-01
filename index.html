@@ -254,7 +254,7 @@
       <img src="AppIcon_512.png" :alt="t('site.name') + ' Icon'" class="w-24 h-24 mx-auto rounded-[35%] mb-6 shadow-lg shadow-emerald-900/50">
       <h1 class="text-4xl sm:text-5xl font-bold mb-4" x-text="t('site.slogan')"></h1>
       <p class="text-lg sm:text-xl text-emerald-100 max-w-2xl mx-auto mb-8" x-text="t('site.tagline')"></p>
-      <a href="https://apps.apple.com/us/app/salah-lite/id6763838391" target="_blank" class="btn-gold inline-block">
+      <a :href="t('site.appStoreLink')" target="_blank" class="btn-gold inline-block">
         <span x-text="t('site.getStarted')"></span> →
       </a>
     </div>
@@ -377,7 +377,7 @@
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold mb-4" x-text="t('site.ctaTitle')">Start Praying with Peace of Mind</h2>
       <p class="text-emerald-100 mb-8 text-lg" x-text="t('site.ctaDesc')">No accounts. No permissions. No internet. Just your prayer times.</p>
-      <a href="https://apps.apple.com/us/app/salah-lite/id6763838391" target="_blank" class="btn-gold inline-block text-lg">
+      <a :href="t('site.appStoreLink')" target="_blank" class="btn-gold inline-block text-lg">
         <span x-text="t('site.getStarted')"></span> →
       </a>
     </div>
