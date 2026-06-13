@@ -20,6 +20,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   gtag('config', 'G-JLQSBWR8ZF');
 </script>
+<!-- Event snippet for 网页浏览 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17537963417/lyGPCK_ypp4bEJmr4KpB',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
   <meta name="description" content="A minimalist, privacy-first, offline prayer app for macOS menu bar. Precise prayer times, widgets, 8+ languages with RTL support. No tracking, no accounts.">
   <meta name="keywords" content="muslim,adhan,qibla,macos,widget,礼拜,轻礼拜,مسلم,أذان,إسلام,مواقيت,أوقات,مسجد,رمضان,قرآن,القبلة,prayer times,islam,mac app,salah,macos widget">
   <meta name="robots" content="index, follow">
@@ -273,7 +289,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img src="AppIcon_512.png" :alt="t('site.name') + ' Icon'" class="w-24 h-24 mx-auto rounded-[35%] mb-6 shadow-lg shadow-emerald-900/50">
       <h1 class="text-4xl sm:text-5xl font-bold mb-4" x-text="t('site.slogan')"></h1>
       <p class="text-lg sm:text-xl text-emerald-100 max-w-2xl mx-auto mb-8" x-text="t('site.tagline')"></p>
-      <a :href="t('site.appStoreLink')" target="_blank" class="btn-gold inline-block">
+      <a :href="t('site.appStoreLink')" target="_blank" @click.prevent="gtag_report_conversion(t('site.appStoreLink'))" class="btn-gold inline-block">
         <span x-text="t('site.getStarted')"></span> →
       </a>
     </div>
@@ -396,7 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold mb-4" x-text="t('site.ctaTitle')">Start Praying with Peace of Mind</h2>
       <p class="text-emerald-100 mb-8 text-lg" x-text="t('site.ctaDesc')">No accounts. No permissions. No internet. Just your prayer times.</p>
-      <a :href="t('site.appStoreLink')" target="_blank" class="btn-gold inline-block text-lg">
+      <a :href="t('site.appStoreLink')" target="_blank" @click.prevent="gtag_report_conversion(t('site.appStoreLink'))" class="btn-gold inline-block text-lg">
         <span x-text="t('site.getStarted')"></span> →
       </a>
     </div>
