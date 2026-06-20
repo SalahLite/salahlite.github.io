@@ -10,7 +10,7 @@ const translations = {
       ctaDesc: "No accounts. No permissions. No internet. Just your prayer times.",
       ctaTitle: "Start Praying with Peace of Mind",
       language: "Language",
-      appStoreLink: "https://apps.apple.com/us/app/salah-lite/id6763838391"
+      appStoreLink: "itms-apps://apps.apple.com/us/app/salah-lite/id6763838391"
     },
     features: [
       {
@@ -108,7 +108,7 @@ const translations = {
       ctaDesc: "无需注册账号，无需额外权限，无需联网 — 只有你的祈祷时间。",
       ctaTitle: "安心礼拜，从这里开始",
       language: "语言",
-      appStoreLink: "https://apps.apple.com/cn/app/salah-lite/id6763838391"
+      appStoreLink: "itms-apps://apps.apple.com/cn/app/salah-lite/id6763838391"
     },
     features: [
       {
@@ -206,7 +206,7 @@ const translations = {
       ctaDesc: "بلا حسابات. بلا صلاحيات. بلا إنترنت. مجرد أوقات صلاتك فقط.",
       ctaTitle: "ابدأ صلاتك وقلبك مطمئن",
       language: "اللغة",
-      appStoreLink: "https://apps.apple.com/sa/app/salah-lite/id6763838391"
+      appStoreLink: "itms-apps://apps.apple.com/sa/app/salah-lite/id6763838391"
     },
     features: [
       {
